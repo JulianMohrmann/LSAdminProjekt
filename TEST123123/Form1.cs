@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
@@ -76,6 +77,8 @@ namespace TEST123123
                 W25 = 0 ;
 
             }
+
+
             //Hier werden alle Strings in einen String gepackt damit wir mehrere Wagen gleichzeitig Alamieren können
             if (txtPass.Text == "" || txtBenutzername.Text == "")
             {
@@ -107,7 +110,7 @@ namespace TEST123123
                 try
                 {
                     cn.Open();
-                    command = new MySqlCommand("Select * from benutzerdaten'", cn);
+                    command = new MySqlCommand("Select * from benutzerdaten", cn);
                     command.ExecuteNonQuery();
                     dt = new DataTable();
                     da = new MySqlDataAdapter(command);
@@ -119,7 +122,7 @@ namespace TEST123123
                 {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
         }
 
@@ -133,11 +136,7 @@ namespace TEST123123
             else {
                 cn.Close();
                 string Probe = (txtusrid.Text);
-                string SQL = ("DELETE FROM `benutzerdaten` WHERE `ID` = '" + Probe + "'");
-
-            
-
-
+                string SQL = ("DELETE FROM `benutzerdaten` WHERE `ID` = '" + Probe + "'");      
                 cn.Open();
                 command = new MySqlCommand(SQL, cn);
                 command.ExecuteNonQuery();
