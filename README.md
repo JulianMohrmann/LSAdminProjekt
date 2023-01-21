@@ -1,2 +1,0 @@
-# LSAdminProjekt
-jo brother wassup
