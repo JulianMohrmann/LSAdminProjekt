@@ -12,12 +12,16 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using MySql.Data.MySqlClient; //Wird benötigt für die Verbindung mit MySql
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Media;
+
 
 
 namespace TEST123123
 {
     public partial class LS_Admin_Panel : Form
     {
+
+       
         //Hier geben wir die Connection zur Datenbank an mit IP Username dem Passwort und welche Datenbank
         MySqlConnection cn = new MySqlConnection("Datasource =94.130.133.100;username=LF8Projekt;password=BDbD)dw!Dvv!7q6k;database=LF8Projekt");
         MySqlCommand command;
@@ -26,6 +30,7 @@ namespace TEST123123
         DataTable dt;
         public LS_Admin_Panel()
         {
+            
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -163,7 +168,11 @@ namespace TEST123123
                     MessageBox.Show(ex.Message);
                 }
             }
-        } 
+        }
 
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

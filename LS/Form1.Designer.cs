@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LS_Admin_Panel));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Berechtigungen = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtusrid = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SpeichernBtn = new System.Windows.Forms.Button();
-            this.Berechtigungen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1055, 359);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // Berechtigungen
+            // 
+            this.Berechtigungen.AutoSize = true;
+            this.Berechtigungen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Berechtigungen.Location = new System.Drawing.Point(335, 18);
+            this.Berechtigungen.Name = "Berechtigungen";
+            this.Berechtigungen.Size = new System.Drawing.Size(155, 25);
+            this.Berechtigungen.TabIndex = 67;
+            this.Berechtigungen.Text = "Berechtigungen:";
             // 
             // button1
             // 
@@ -141,6 +151,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(132, 20);
             this.txtPass.TabIndex = 23;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label7
             // 
@@ -175,23 +186,15 @@
             this.SpeichernBtn.UseVisualStyleBackColor = false;
             this.SpeichernBtn.Click += new System.EventHandler(this.SpeBtn_Click);
             // 
-            // Berechtigungen
-            // 
-            this.Berechtigungen.AutoSize = true;
-            this.Berechtigungen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Berechtigungen.Location = new System.Drawing.Point(335, 18);
-            this.Berechtigungen.Name = "Berechtigungen";
-            this.Berechtigungen.Size = new System.Drawing.Size(155, 25);
-            this.Berechtigungen.TabIndex = 67;
-            this.Berechtigungen.Text = "Berechtigungen:";
-            // 
             // LS_Admin_Panel
             // 
+            this.AcceptButton = this.SpeichernBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 461);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LS_Admin_Panel";
             this.Text = "LS Admin Panel";

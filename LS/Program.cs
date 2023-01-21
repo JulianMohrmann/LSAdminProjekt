@@ -16,7 +16,7 @@ namespace TEST123123
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LS_Admin_Panel());
+            Application.Run(new Form2());
         }
     }
 }
